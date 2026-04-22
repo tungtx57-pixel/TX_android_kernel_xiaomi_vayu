@@ -45,16 +45,10 @@ compile()
     make -j$(nproc --all) \
     O=out \
     ARCH=${ARCH}\
-    CC="ccache clang" \
+    CC="ccache aarch64-linux-gnu-gcc" \
     CROSS_COMPILE=aarch64-linux-gnu- \
     CROSS_COMPILE_ARM32=arm-linux-gnueabi- \
-    CROSS_COMPILE_COMPAT=arm-linux-gnueabi- \
-    AR=llvm-ar \
-    LLVM_NM=llvm-nm \
-    OBJCOPY=llvm-objcopy \
-    LD=ld.lld NM=llvm-nm \
-    LLVM=1 \
-    LLVM_IAS=1
+    CROSS_COMPILE_COMPAT=arm-linux-gnueabi-
 }
 
 completion()
